@@ -40,26 +40,20 @@
                 --existente-color: #e74c3c;
                 --requerida-color: #3498db;
                 --ausente-color: #f1f1f1;
-                --corona-color: #f1c40f;
+                --corona-color: #e74c3c;
             }            
             .control-btn[data-treatment="existente"] .color-indicator { background-color: var(--existente-color); }
             .control-btn[data-treatment="requerida"] .color-indicator { background-color: var(--requerida-color); }
 
-            .control-btn[data-treatment="ausente"] .color-indicator { background-color: var(--ausente-color); position: relative; }
-            .control-btn[data-treatment="extraido"] .color-indicator { background-color: var(--ausente-color); position: relative; }
-            .control-btn[data-treatment="extraer"] .color-indicator { background-color: var(--ausente-color); position: relative; }
+            .control-btn[data-treatment="extraer"] .color-indicator { background-color: var(--requerida-color); position: relative; }
             .control-btn[data-treatment="fija"] .color-indicator { background-color: var(--ausente-color); position: relative; }
-            .control-btn[data-treatment="removible"] .color-indicator { background-color: var(--ausente-color); position: relative; }
             /* -------------------- */
             .control-btn[data-treatment="corona"] .color-indicator { background-color: var(--corona-color); }
             .control-btn[data-treatment="limpiar"] .color-indicator { background-color: #f1f1f1; position: relative; }
             /* ----------Estilos de los botones--------- */
             .control-btn[data-treatment="limpiar"] .color-indicator:after,
-            .control-btn[data-treatment="ausente"] .color-indicator:after,
-            .control-btn[data-treatment="extraido"] .color-indicator:after,
             .control-btn[data-treatment="extraer"] .color-indicator:after,
-            .control-btn[data-treatment="fija"] .color-indicator:after,
-            .control-btn[data-treatment="removible"] .color-indicator:after {            
+            .control-btn[data-treatment="fija"] .color-indicator:after {            
                 position: absolute;         
                 top: 50%;
                 left: 50%;
@@ -70,14 +64,6 @@
             .control-btn[data-treatment="limpiar"] .color-indicator:after{
                 content: "🗑️";
             }
-            .control-btn[data-treatment="ausente"] .color-indicator:after{          
-                content: "A";
-                color:#000;/*negro*/
-            }
-            .control-btn[data-treatment="extraido"] .color-indicator:after{
-                content: "X";
-                color:#FF0000;/*rojo*/             
-            }
             .control-btn[data-treatment="extraer"] .color-indicator:after{          
                 content: "X";
                 color:#0000ff;/*azul*/
@@ -87,16 +73,7 @@
                 display: inline-block;
                 width: 16px;
                 height: 16px;
-                border: 2px solid #FF0000; /* Borde azul */
-                background-color: white;   /* Centro blanco */
-                box-sizing: border-box;
-            }
-            .control-btn[data-treatment="removible"] .color-indicator::after {
-                content: "";
-                display: inline-block;
-                width: 16px;
-                height: 16px;
-                border: 2px solid #0000ff; /* Borde azul */
+                border: 2px solid #FF0000; /* Borde rojo */
                 background-color: white;   /* Centro blanco */
                 box-sizing: border-box;
             }
@@ -250,25 +227,13 @@
                                 <div class="color-indicator"></div>
                                 <span>Prestaciones Requeridas</span>
                             </button>
-                            <button class="btn btn-light control-btn border border-secondary" data-treatment="ausente">
-                                <div class="color-indicator"></div>
-                                <span>Ausente</span>
-                            </button>
-                            <button class="btn btn-light control-btn border border-secondary" data-treatment="extraido">
-                                <div class="color-indicator"></div>
-                                <span>Diente Extraido</span>
-                            </button>
                             <button class="btn btn-light control-btn border border-secondary" data-treatment="extraer">
                                 <div class="color-indicator"></div>
                                 <span>Diente a Extraer</span>
                             </button>
                             <button class="btn btn-light control-btn border border-secondary" data-treatment="fija">
                                 <div class="color-indicator"></div>
-                                <span>Protesis Fija</span>
-                            </button>
-                            <button class="btn btn-light control-btn border border-secondary" data-treatment="removible">
-                                <div class="color-indicator"></div>
-                                <span>Protesis Removible</span>
+                                <span>Protesis</span>
                             </button>
                             <button class="btn btn-light control-btn border border-secondary" data-treatment="corona">
                                 <div class="color-indicator"></div>
@@ -332,13 +297,10 @@
                                     <h6 class="card-title text-center mb-3 fw-bold" >REFERENCIAS</h6>
                                     <p class="mb-2 mx-0 px-0 " ><span class="text-danger fw-bold">ROJO:</span> Prestaciones Existentes</p>
                                     <p class="mb-2 mx-0 px-0"><span class="text-primary fw-bold">AZUL:</span> Prestaciones Requeridas</p>
-                                    <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-danger">X</b>Diente Extraido</p>
                                     <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-primary">X</b>Diente a Extraer</p>
-                                    <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-black">A</b>Diente Ausente</p>
                                     
-                                    <p class="mb-2 mx-0 px-0"><span class="border border-danger border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis Fijas</p>
-                                    <p class="mb-2 mx-0 px-0"><span class="border border-primary border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis Removible</p>
-                                    <p class="mb-3 mx-0 px-0"><span class="border border-dark rounded-circle me-1 align-middle bg-warning " style="display: inline-block; width: 15px; height: 15px;"></span> Coronas</p>
+                                    <p class="mb-2 mx-0 px-0"><span class="border border-danger border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis</p>
+                                    <p class="mb-3 mx-0 px-0"><span class="border border-dark rounded-circle me-1 align-middle bg-danger " style="display: inline-block; width: 15px; height: 15px;"></span> Coronas</p>
                                     
                                     <div class="d-flex align-items-center " style="width: fit-content;">
                                         <label for="dientes" class="me-2 mb-0">
@@ -543,15 +505,37 @@
                     svg.appendChild(part);
                 }
                 
-                // Crear la marca X para diente ausente
+                // Crear círculo para corona
+                const coronaCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                coronaCircle.setAttribute("cx", "50");
+                coronaCircle.setAttribute("cy", "50");
+                coronaCircle.setAttribute("r", "35");
+                coronaCircle.setAttribute("fill", "#e74c3c");
+                coronaCircle.setAttribute("stroke", "#c0392b");
+                coronaCircle.setAttribute("stroke-width", "2");
+                coronaCircle.classList.add("corona-circle");
+                coronaCircle.style.display = "none";
+                coronaCircle.dataset.tooth = toothNumber;
+                
+                // Añadir evento de clic al círculo de corona
+                coronaCircle.addEventListener('click', function() {
+                    if (selectedTreatment) {
+                        handleToothPartClick(toothNumber, 'corona');
+                    }
+                });
+                
+                svg.appendChild(coronaCircle);
+                
+                // Crear la marca X para diente a extraer
                 const xMark = document.createElementNS("http://www.w3.org/2000/svg", "text");
                 xMark.setAttribute("x", "50");
                 xMark.setAttribute("y", "80");
                 xMark.setAttribute("text-anchor", "middle");
                 xMark.setAttribute("font-size", "100");
-                xMark.setAttribute("fill", "black");                    
+                xMark.setAttribute("fill", "#0000FF");                    
                 xMark.classList.add("x-mark");
-                xMark.textContent = "A";
+                xMark.textContent = "X";
+                xMark.style.display = "none";
                 svg.appendChild(xMark);
                 
                 tooth.appendChild(svg);
@@ -606,125 +590,109 @@
         // Manejar clic en parte del diente
         function handleToothPartClick(toothNumber, partName) {
                 const tooth = document.querySelector(`.tooth[data-number="${toothNumber}"]`);
-                const toothPart = document.querySelector(`.tooth-part[data-tooth="${toothNumber}"][data-part="${partName}"]`);
                 const svg = tooth.querySelector('svg');
                 const xMark = svg.querySelector('.x-mark');
+                const coronaCircle = svg.querySelector('.corona-circle');
                 
                 if (selectedTreatment === 'limpiar') {
-                    // Limpiar
-                    if (toothData[toothNumber].isAbsent) {
-                        tooth.classList.remove('tooth-ausente');
-                        toothData[toothNumber].isAbsent = false;
-                    }
-                    
-                    // Restaurar parte a estado original
-                    toothPart.classList.remove('existente', 'requerida', 'ausente', 'corona');
-                    toothData[toothNumber][partName] = null;
-                    
-                    // Resetear marcas X y bordes
-                    xMark.textContent = "A";
-                    xMark.setAttribute("fill", "black");
+                    // Limpiar todo el diente
+                    // Ocultar marca X
                     xMark.style.display = "none";
                     
-                    // Resetear bordes para prótesis
+                    // Ocultar círculo de corona
+                    coronaCircle.style.display = "none";
+                    
+                    // Restaurar partes a estado original
                     tooth.querySelectorAll('.tooth-part').forEach(part => {
+                        part.classList.remove('existente', 'requerida', 'corona');
                         part.style.stroke = "black";
                         part.style.strokeWidth = "1";
-                    });
-                    
-                } else if (selectedTreatment === 'ausente') {
-                    // Marcar diente como ausente
-                    tooth.classList.add('tooth-ausente');
-                    toothData[toothNumber].isAbsent = true;
-                    
-                    // Mostrar la X con "A" negra
-                    xMark.textContent = "A";
-                    xMark.setAttribute("fill", "black");
-                    xMark.style.display = "block";
-                    
-                    // Marcar todas las partes como ausentes
-                    tooth.querySelectorAll('.tooth-part').forEach(part => {
-                        part.classList.remove('existente', 'requerida', 'corona');
-                        part.classList.add('ausente');
                         const partDataName = part.dataset.part;
-                        toothData[toothNumber][partDataName] = 'ausente';
+                        toothData[toothNumber][partDataName] = null;
                     });
                     
-                } else if (selectedTreatment === 'extraido') {
-                    // Marcar diente como extraído
-                    tooth.classList.add('tooth-ausente');
-                    toothData[toothNumber].isAbsent = true;
-                    
-                    // Mostrar la X con color rojo
-                    xMark.textContent = "X";
-                    xMark.setAttribute("fill", "#FF0000"); // Rojo
-                    xMark.style.display = "block";
-                    
-                    // Marcar todas las partes como ausentes
-                    tooth.querySelectorAll('.tooth-part').forEach(part => {
-                        part.classList.remove('existente', 'requerida', 'corona');
-                        part.classList.add('ausente');
-                        const partDataName = part.dataset.part;
-                        toothData[toothNumber][partDataName] = 'extraido';
-                    });
+                    toothData[toothNumber].isAbsent = false;
                     
                 } else if (selectedTreatment === 'extraer') {
                     // Marcar diente para extraer
-                    tooth.classList.add('tooth-ausente');
-                    toothData[toothNumber].isAbsent = true;                    
+                    toothData[toothNumber].isAbsent = true;
+                    
                     // Mostrar la X con color azul
-                    xMark.textContent = "X";
-                    xMark.setAttribute("fill", "#0000FF"); // Azul
-                    xMark.style.display = "block";                    
-                    // Marcar todas las partes como ausentes
+                    xMark.style.display = "block";
+                    
+                    // Ocultar círculo de corona
+                    coronaCircle.style.display = "none";
+                    
+                    // Marcar todas las partes como extraer
                     tooth.querySelectorAll('.tooth-part').forEach(part => {
                         part.classList.remove('existente', 'requerida', 'corona');
-                        part.classList.add('ausente');
+                        part.style.stroke = "black";
+                        part.style.strokeWidth = "1";
                         const partDataName = part.dataset.part;
                         toothData[toothNumber][partDataName] = 'extraer';
-                    });                    
+                    });
+                    
                 } else if (selectedTreatment === 'fija') {
-                        // Marcar diente con prótesis removible (borde azul)
-                        if (toothData[toothNumber].isAbsent) {
-                            tooth.classList.remove('tooth-ausente');
-                            toothData[toothNumber].isAbsent = false;
-                        }                        
+                    // Marcar diente con prótesis fija (borde rojo)
+                    toothData[toothNumber].isAbsent = false;
+                    
+                    // Ocultar la X
+                    xMark.style.display = "none";
+                    
+                    // Ocultar círculo de corona
+                    coronaCircle.style.display = "none";
+                    
+                    // Aplicar borde grueso rojo a todas las partes
+                    tooth.querySelectorAll('.tooth-part').forEach(part => {
+                        part.classList.remove('existente', 'requerida', 'corona');
+                        part.style.stroke = "#FF0000"; // Rojo
+                        part.style.strokeWidth = "5";
+                        const partDataName = part.dataset.part;
+                        toothData[toothNumber][partDataName] = 'fija';
+                    });
+                    
+                } else if (selectedTreatment === 'corona') {
+                    // Mostrar círculo de corona
+                    toothData[toothNumber].isAbsent = false;
+                    
+                    // Ocultar la X
+                    xMark.style.display = "none";
+                    
+                    // Mostrar círculo de corona
+                    coronaCircle.style.display = "block";
+                    
+                    // Limpiar estilos de las partes
+                    tooth.querySelectorAll('.tooth-part').forEach(part => {
+                        part.classList.remove('existente', 'requerida');
+                        part.style.stroke = "black";
+                        part.style.strokeWidth = "1";
+                        const partDataName = part.dataset.part;
+                        toothData[toothNumber][partDataName] = 'corona';
+                    });
+                    
+                } else if (selectedTreatment === 'existente' || selectedTreatment === 'requerida') {
+                    // Aplicar tratamiento específico a la parte clickeada
+                    toothData[toothNumber].isAbsent = false;
+                    
+                    // Ocultar la X
+                    xMark.style.display = "none";
+                    
+                    // Ocultar círculo de corona
+                    coronaCircle.style.display = "none";
+                    
+                    // Solo aplicar a la parte específica si no es corona
+                    if (partName !== 'corona') {
+                        const toothPart = document.querySelector(`.tooth-part[data-tooth="${toothNumber}"][data-part="${partName}"]`);
                         
-                        // Aplicar borde grueso azul a todas las partes
-                        tooth.querySelectorAll('.tooth-part').forEach(part => {
-                            part.style.stroke = "red"; // Azul
-                            part.style.strokeWidth = "5";
-                            const partDataName = part.dataset.part;
-                            toothData[toothNumber][partDataName] = 'fija';
-                        });                        
-                        // Ocultar la X si estaba visible
-                        xMark.style.display = "none";
-                } else if (selectedTreatment === 'removible') {
-                        // Marcar diente con prótesis removible (borde azul)
-                        if (toothData[toothNumber].isAbsent) {
-                            tooth.classList.remove('tooth-ausente');
-                            toothData[toothNumber].isAbsent = false;
-                        }                        
-                        // Aplicar borde grueso azul a todas las partes
-                        tooth.querySelectorAll('.tooth-part').forEach(part => {
-                            part.style.stroke = "#0000FF"; // Azul
-                            part.style.strokeWidth = "5";
-                            const partDataName = part.dataset.part;
-                            toothData[toothNumber][partDataName] = 'removible';
-                        });                        
-                        // Ocultar la X si estaba visible
-                        xMark.style.display = "none";
-                } else {
-                    // Aplicar otros tratamientos específicos (existente, requerida, corona, etc.)
-                    if (toothData[toothNumber].isAbsent) {
-                        tooth.classList.remove('tooth-ausente');
-                        toothData[toothNumber].isAbsent = false;
-                        xMark.style.display = "none";
-                    }                    
-                    // Remover cualquier clase anterior y añadir la nueva
-                    toothPart.classList.remove('existente', 'requerida', 'ausente', 'corona');
-                    toothPart.classList.add(selectedTreatment);
-                    toothData[toothNumber][partName] = selectedTreatment;
+                        // Restaurar estilo de borde normal
+                        toothPart.style.stroke = "black";
+                        toothPart.style.strokeWidth = "1";
+                        
+                        // Remover cualquier clase anterior y añadir la nueva
+                        toothPart.classList.remove('existente', 'requerida', 'corona');
+                        toothPart.classList.add(selectedTreatment);
+                        toothData[toothNumber][partName] = selectedTreatment;
+                    }
                 }
         }            
         // Crear el contenido para la exportación
@@ -916,13 +884,10 @@
                     <h6 class="card-title text-center mb-3 fw-bold" >REFERENCIAS</h6>
                     <p class="mb-2 mx-0 px-0 " ><span class="text-danger fw-bold">ROJO:</span> Prestaciones Existentes</p>
                     <p class="mb-2 mx-0 px-0"><span class="text-primary fw-bold">AZUL:</span> Prestaciones Requeridas</p>
-                    <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-danger">X</b>Diente Extraido</p>
                     <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-primary">X</b>Diente a Extraer</p>
-                    <p class="mb-2 mx-0 px-0"><b class="fs-6 me-2 text-black">A</b>Diente Ausente</p>
                     
-                    <p class="mb-2 mx-0 px-0"><span class="border border-danger border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis Fijas</p>
-                    <p class="mb-2 mx-0 px-0"><span class="border border-primary border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis Removible</p>
-                    <p class="mb-3 mx-0 px-0"><span class="border border-dark rounded-circle me-1 align-middle bg-warning " style="display: inline-block; width: 15px; height: 15px;"></span> Coronas</p>
+                    <p class="mb-2 mx-0 px-0"><span class="border border-danger border-2 me-1 align-middle" style="display: inline-block; width: 15px; height: 15px;"></span> Prótesis</p>
+                    <p class="mb-3 mx-0 px-0"><span class="border border-dark rounded-circle me-1 align-middle bg-danger " style="display: inline-block; width: 15px; height: 15px;"></span> Coronas</p>
                     
                     <div class="d-flex align-items-center " style="width: fit-content;">
                         <label for="dientes" class="me-2 mb-0">
